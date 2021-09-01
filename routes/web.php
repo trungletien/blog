@@ -13,7 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/**
+ * Route front-end
+ */
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/admin/index', function () {
     return view('welcome');
 });
 
@@ -29,12 +36,12 @@ Route::get('/author/post', function () {
     return view('frontend.author.author_post');
 });
 
-Route::get('/blog/detail', function () {
-    return view('frontend.blog.detail');
+Route::get('/post/detail', function () {
+    return view('frontend.post.detail');
 });
 
-Route::get('/blog/write', function () {
-    return view('frontend.blog.write');
+Route::get('/post/write', function () {
+    return view('frontend.post.write');
 });
 
 Route::get('/category', function () {

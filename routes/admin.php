@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(['as' => 'admin.'], function () {
+Route::group(['as' => 'admin.', 'middleware' => ['web']], function () {
     Route::get('/dashboard', function () {
         return view('admin.home.index');
-    });
+    })->name('home');
+
+    Route::resource('category', 'admin\AdminCategoryController');
 });
